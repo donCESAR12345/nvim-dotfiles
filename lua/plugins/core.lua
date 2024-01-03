@@ -69,7 +69,9 @@ local plugins = {
 			local builtin = require("telescope.builtin")
 			vim.keymap.set("n", "<leader>b", builtin.buffers, {})
 			vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
+			vim.keymap.set("n", "<leader>fh", builtin.oldfiles, {})
 			vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
+			vim.keymap.set("n", "<leader>fm", builtin.marks, {})
 			vim.keymap.set("n", "<leader>fc", builtin.colorscheme, {})
 
 			require("telescope").load_extension("ui-select")
@@ -114,7 +116,9 @@ local plugins = {
 				f = {
 					name = "Telescope",
 					f = { "Find files by name" },
+					h = { "Open recent files" },
 					g = { "Find files using content (grep)" },
+					m = { "Jump to bookmarks" },
 					c = { "Select colorscheme" },
 				},
 				l = {
