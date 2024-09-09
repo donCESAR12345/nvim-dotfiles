@@ -26,8 +26,6 @@ local plugins = {
         },
         config = function()
             require("neogit").setup({})
-            -- Mappings
-            vim.keymap.set("n", "<leader>gg", ":Neogit<CR>", {})
         end
     },
 
@@ -53,13 +51,6 @@ local plugins = {
                 },
             })
 
-            -- Mappings
-            vim.keymap.set("n", "<leader>e", ":Neotree<CR>", {})
-            vim.keymap.set("n", "<leader>E", ":Neotree filesystem close<CR>", {})
-            vim.keymap.set("n", "<leader>ts", ":Neotree document_symbols reveal float<CR>", {})
-
-            -- Git Mappings
-            vim.keymap.set("n", "<leader>gs", ":Neotree git_status reveal float<CR>", {})
         end,
     },
 
