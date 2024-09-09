@@ -34,14 +34,6 @@ local plugins = {
                 host = "127.0.0.1",
                 port = 6006,
             }
-
-            -- Keymaps
-            vim.keymap.set("n", "<Leader>db", dap.toggle_breakpoint, {})
-            vim.keymap.set("n", "<Leader>dc", dap.continue, {})
-            vim.keymap.set("n", "<Leader>dso", dap.step_over, {})
-            vim.keymap.set("n", "<Leader>dsi", dap.step_into, {})
-            vim.keymap.set("n", "<Leader>dsO", dap.step_out, {})
-            vim.keymap.set("n", "<Leader>dr", dap.repl.open, {})
         end,
     },
 
