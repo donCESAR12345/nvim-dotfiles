@@ -11,13 +11,7 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- Lua-based file detection for .ipynb
-vim.cmd [[
-    augroup filetypedetect
-        autocmd! BufRead,BufNewFile *.ipynb set filetype=ipynb
-    augroup END
-]]
-
 require("vim-options")
 require("lazy").setup("plugins")
 require("keymaps").setup()
+require("ftdetect").setup()
