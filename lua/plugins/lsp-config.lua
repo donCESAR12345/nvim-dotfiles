@@ -30,17 +30,17 @@ local plugins = {
             }
 
             local servers = {
-                "basedpyright",  -- Python
-                "bashls",        -- Shell
-                "clangd",        -- C/C++
-                "dockerls",      -- Docker
-                "gdscript",      -- GodotScript
-                "html",          -- HTML
-                "jsonls",        -- JSON
-                "lua_ls",        -- Lua
-                "qml_lsp",       -- QML
-                "rust_analyzer", -- Rust
-                "ts_ls",         -- Typescript/Javascript
+                "bashls",               -- Shell
+                "clangd",               -- C/C++
+                "dockerls",             -- Docker
+                "gdscript",             -- GodotScript
+                "html",                 -- HTML
+                "jedi_language_server", -- Python
+                "jsonls",               -- JSON
+                "lua_ls",               -- Lua
+                "qml_lsp",              -- QML
+                "rust_analyzer",        -- Rust
+                "ts_ls",                -- Typescript/Javascript
             }
 
             -- Default config
@@ -71,11 +71,12 @@ local plugins = {
 
                     -- Diagnostics
                     null_ls.builtins.diagnostics.rpmspec,
-                    null_ls.builtins.diagnostics.ruff,
+                    -- null_ls.builtins.diagnostics.ruff,
 
                     -- Formatting
                     null_ls.builtins.formatting.astyle,
                     null_ls.builtins.formatting.black,
+                    null_ls.builtins.formatting.beautysh,
                     null_ls.builtins.formatting.clang_format,
                     null_ls.builtins.formatting.djlint,
                     null_ls.builtins.formatting.isort,

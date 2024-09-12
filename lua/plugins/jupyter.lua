@@ -30,16 +30,16 @@ local plugins = {
         "3rd/image.nvim",
         config = function()
             require("image").setup({
-                backend = "kitty",                      -- Kitty will provide the best experience, but you need a compatible terminal
-                integrations = {},                      -- do whatever you want with image.nvim's integrations
-                max_width = 100,                        -- tweak to preference
-                max_height = 12,                        -- ^
+                backend = "kitty",            -- Kitty will provide the best experience, but you need a compatible terminal
+                integrations = {},            -- do whatever you want with image.nvim's integrations
+                max_width = 200,              -- tweak to preference
+                max_height = 100,              -- ^
                 max_height_window_percentage = math.huge, -- this is necessary for a good experience
                 max_width_window_percentage = math.huge,
                 window_overlap_clear_enabled = true,
                 window_overlap_clear_ft_ignore = { "cmp_menu", "cmp_docs", "" },
             })
-        end
+        end,
     },
 
     -- LSP for Jupyter
@@ -76,7 +76,7 @@ local plugins = {
                     enabled = true,
                     default_method = "molten",
                 },
-                ft = { "quarto", "markdown" }
+                ft = { "quarto", "markdown" },
             })
         end,
     },
@@ -84,10 +84,16 @@ local plugins = {
     -- Jupytext
     {
         "GCBallesteros/jupytext.nvim",
-        config = true,
+        config = function()
+            require("jupytext").setup({
+                style = "markdown",
+                output_extension = "md",
+                force_ft = "markdown",
+            })
+        end,
         -- Depending on your nvim distro or config you may need to make the loading not lazy
         -- lazy=false,
-    }
+    },
 }
 
 return plugins

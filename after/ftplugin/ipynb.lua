@@ -1,6 +1,3 @@
-require("quarto").activate()
-
---- Python env
 -- change the configuration when editing a python file
 vim.api.nvim_create_autocmd("BufEnter", {
     pattern = "*.py",
