@@ -35,7 +35,7 @@ vim.api.nvim_create_autocmd("BufEnter", {
 -- Mappings
 -- Molten
 vim.keymap.set("n", "<leader>ji", function()
-    local venv = os.getenv("CONDA_ENV")
+    local venv = os.getenv("CONDA_ACADEMY_KERNEL")
     if venv ~= nil then
         venv = string.match(venv, "/.+/(.+)")
         vim.cmd(("MoltenInit %s"):format(venv))
