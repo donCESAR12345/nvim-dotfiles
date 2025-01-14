@@ -109,6 +109,7 @@ M.lsp = function()
     })
 end
 
+-- Telescope
 M.telescope = function()
     local builtin = require("telescope.builtin")
 
@@ -131,12 +132,30 @@ M.telescope = function()
     })
 end
 
+-- ToggleTerm
+M.toggleterm = function()
+    -- vim.keymap.set("n", "<leader>tt", ":ToggleTerm name=tab direction=tab<CR>", {})
+    vim.keymap.set("n", "<leader>tf", ":ToggleTerm name=float direction=float<CR>", {})
+    vim.keymap.set("n", "<leader>tv", ":ToggleTerm name=vert direction=vertical size=50<CR>", {})
+    vim.keymap.set("n", "<leader>th", ":ToggleTerm name=horiz direction=horizontal<CR>", {})
+
+    -- Which-key
+    wk.add({
+        { "<leader>t", icon = "", group = "Terminal" },
+        -- { "<leader>tt", icon = "", desc = "Open terminal in new tab" },
+        { "<leader>tf", icon = "", desc = "Open floating terminal" },
+        { "<leader>tv", icon = "", desc = "Open vertical terminal (to the right)" },
+        { "<leader>th", icon = "", desc = "Open horizontal terminal (at the bottom)" },
+    })
+end
+
 M.setup = function()
     M.core()
     M.dap()
     M.git()
     M.lsp()
     M.telescope()
+    M.toggleterm()
 end
 
 return M

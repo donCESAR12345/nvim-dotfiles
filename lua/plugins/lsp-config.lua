@@ -71,15 +71,15 @@ local plugins = {
 
                     -- Diagnostics
                     null_ls.builtins.diagnostics.rpmspec,
-                    -- null_ls.builtins.diagnostics.ruff,
+                    null_ls.builtins.diagnostics.pylint,
 
                     -- Formatting
-                    null_ls.builtins.formatting.astyle,
+                    null_ls.builtins.formatting.usort,
                     null_ls.builtins.formatting.black,
-                    null_ls.builtins.formatting.beautysh,
+                    -- null_ls.builtins.formatting.latexindent,
+                    -- null_ls.builtins.formatting.beautysh,
                     null_ls.builtins.formatting.clang_format,
                     null_ls.builtins.formatting.djlint,
-                    null_ls.builtins.formatting.isort,
                     null_ls.builtins.formatting.stylua,
                     null_ls.builtins.formatting.prettierd,
                 }

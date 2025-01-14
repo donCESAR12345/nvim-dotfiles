@@ -10,25 +10,25 @@ opt.shiftwidth = 4 -- width for autoindents
 opt.expandtab = true -- convert tabs into spaces
 opt.autoindent = true -- indent a new line the same as the line just typed
 
-opt.clipboard = 'unnamedplus'
+opt.clipboard = "unnamedplus"
 opt.smartindent = true
 opt.ignorecase = true
 opt.showmatch = true
 opt.hlsearch = true
 opt.incsearch = true
-opt.cc = '80'
+opt.cc = "80"
 
 g.mapleader = " "
 
 vim.wo.number = true
 
 vim.api.nvim_set_hl(0, "Normal", {
-  fg = "#bbbbbb",
-  bg = "NONE",
-  bold = false,
-  italic = false,
-  underline = false,
-  undercurl = false,
+	fg = "#bbbbbb",
+	bg = "NONE",
+	bold = false,
+	italic = false,
+	underline = false,
+	undercurl = false,
 })
 
 -- Example for configuring Neovim to load user-installed installed Lua rocks:
@@ -36,4 +36,12 @@ package.path = package.path .. ";" .. vim.fn.expand("$HOME") .. "/.luarocks/shar
 package.path = package.path .. ";" .. vim.fn.expand("$HOME") .. "/.luarocks/share/lua/5.1/?.lua"
 
 -- Python virtual env
-vim.g.python3_host_prog=vim.fn.expand("~/.conda/envs/academy/bin/python3.11")
+vim.g.python3_host_prog = vim.fn.expand("~/.conda/envs/academy/bin/python3.11")
+
+-- Web development 2 spaces
+vim.api.nvim_create_augroup("WebDevTabs", { clear = true })
+vim.api.nvim_create_autocmd("FileType", {
+	group = "WebDevTabs",
+	pattern = { "html", "css", "javascript", "typescript", "typescriptreact", "json" },
+	command = "setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab",
+})
